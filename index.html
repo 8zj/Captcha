@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Captcha Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="captcha-container">
+        <div id="captchaType">
+            <label for="captchaSelect">Select Captcha Type:</label>
+            <select id="captchaSelect" onchange="changeCaptchaType()">
+                <option value="alphanumeric">Captcha 1: Letters and Numbers</option>
+                <option value="numeric">Captcha 2: Numbers Only</option>
+                <option value="image">Captcha 3: Picture Captcha</option>
+            </select>
+        </div>
+        <div class="captcha-content">
+            <canvas id="captchaCanvas" class="captcha-code"></canvas>
+            <div id="captchaCode" class="captcha-code"></div>
+            <button onclick="generateCaptcha()" class="captcha-button">Refresh code</button><br><br>
+            <input type="text" id="userCode" class="captcha-input" placeholder="Enter Captcha Code"><br><br>
+            <button onclick="validateCaptcha()" class="captcha-button">Submit</button>
+        </div>
+    </div>
+
+    <script src="captcha.js"></script>
+</body>
+</html>
